@@ -1,0 +1,65 @@
+<section class="portfolio" id="portfolio">
+  <h2 class="heading">Main <span>Projects</span></h2>
+  <div class="portfolio-container">
+    <div class="portfolio-box">
+      <div
+        class="portfolio-detail {{ items.status }}"
+        *ngFor="let items of projects"
+      >
+        <p class="numb">{{ items.id }}</p>
+        <h4 #projectSection class="project-section">{{ items.section }}</h4>
+        <p #projectDescription class="project-description">
+          {{ items.description }}
+        </p>
+        <div class="tech">
+          <p #projectSkills class="project-skills">{{ items.skills }}</p>
+        </div>
+        <div class="live-github">
+          <a href="" class=""
+            ><i class="bx bx-arrow-back"
+              ><span>{{ items.liveLink }}</span></i
+            ></a
+          >
+          <!--  <a href="" class=""
+            ><i class="bx bxl-github"
+              ><span>{{ items.githubLink }}</span></i
+            ></a
+          >-->
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-box">
+      <div class="portfolio-carousel">
+        <div class="img-slide">
+          <div class="img-item" *ngFor="let item of projects">
+            <img
+              src="{{ item.imageLink }}"
+              alt=""
+              #projectImage
+              class="project-image"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="navigation">
+        <button
+          #arrowLeft
+          aria-label="back"
+          class="arrow-left disabled"
+          (click)="navigateLeft()"
+        >
+          <i class="bx bx-chevron-left"></i>
+        </button>
+        <button
+          #arrowRight
+          aria-label="forward"
+          class="arrow-right"
+          (click)="navigateRight()"
+        >
+          <i class="bx bx-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

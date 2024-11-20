@@ -1,0 +1,6 @@
+[
+  { "id": 0, "title": "QA System Test Lead", "icon": "bx bx-test-tube" },
+  { "id": 1, "title": "Networks Engineer<", "icon": "bx bx-signal-5" },
+  { "id": 2, "title": "Cyber security Expert", "icon": "bx bxs-radiation" },
+  { "id": 3, "title": "Full Stack Developer", "icon": "bx bxl-dev-to" }
+]

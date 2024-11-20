@@ -1,0 +1,17 @@
+<section class="services" id="services">
+  <h2 class="heading">My <span>Services</span></h2>
+  <br />
+  <div class="services-container">
+    <div class="services-box" *ngFor="let items of services">
+      <div class="icon">
+        <i class="{{ items.icon }}"></i>
+        <a href="{{ items.externalLink }}"><i class="bx bx-arrow-back"></i></a>
+      </div>
+
+      <h3>{{ items.title }}</h3>
+      <p>
+        {{ items.information }}
+      </p>
+    </div>
+  </div>
+</section>

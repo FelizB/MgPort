@@ -1,0 +1,31 @@
+<section class="testimonial-container" id="endorsements">
+  <h2 class="heading">Valuable <span>Endosers</span></h2>
+  <div class="testimonial-wrapper">
+    <div class="testimonial-box mySwiper">
+      <div class="testimonial-content swiper-wrapper">
+        <div
+          class="testimonial-slide swiper-slide"
+          *ngFor="let items of endorsers"
+        >
+          <img src="{{ items.imageLink }}" alt="" />
+          <h3>{{ items.name }}</h3>
+          <p>{{ items.phone }}</p>
+          <p>{{ items.email }}</p>
+          <p>
+            {{ items.address }}
+          </p>
+          <br />
+          <p>
+            {{ items.information }}
+          </p>
+          <p>
+            {{ items.comment }}
+          </p>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
