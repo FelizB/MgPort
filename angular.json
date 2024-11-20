@@ -5,17 +5,16 @@
   "projects": {
     "MgPort": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/mg-port",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -26,12 +25,7 @@
               }
             ],
             "styles": ["src/assets/index.css", "src/styles.css"],
-            "scripts": ["src/assets/index.js"],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/main.server.ts"
-            }
+            "scripts": ["src/assets/index.js"]
           },
           "configurations": {
             "production": {
@@ -39,53 +33,26 @@
               "optimization": true,
               "sourceMap": false,
               "extractLicenses": true,
+              "fileReplacements": [],
               "budgets": [
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
                   "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             },
             "development": {
               "optimization": false,
+              "sourceMap": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "buildOptimizer": false
             }
           },
           "defaultConfiguration": "production"
         },
-        "server": {
-          "configurations": {
-            "production": {
-              "outputPath": "dist/mg-port/server",
-              "main": "src/main.server.ts",
-              "tsConfig": "tsconfig.server.json"
-            },
-            "development": {
-              "outputPath": "dist/mg-port/server",
-              "main": "src/main.server.ts",
-              "tsConfig": "tsconfig.server.json"
-            }
-          },
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/mg-port/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
-          }
-        },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "port": "process.env.PORT || 3999"
-          },
           "configurations": {
             "production": {
               "buildTarget": "MgPort:build:production"
@@ -95,24 +62,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": ["src/assets/index.css", "src/styles.css"],
-            "scripts": ["src/assets/index.js"]
-          }
         }
       }
     }
