@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node dist/mg-port/server/main.js",
+    "build": "ng build --configuration production && ng run MgPort:server:production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "serve:ssr": "node dist/mg-port/server/main.js",
+    "serve:ssr:prod": "node dist/mg-port/server/main.js",
     "serve:ssr:MgPort": "node dist/mg-port/server/server.mjs"
   },
   "private": true,

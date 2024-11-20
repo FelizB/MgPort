@@ -1,10 +1,13 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist/mg-port/server",
-    "target": "ES2016",
-    "module": "commonjs",
-    "moduleResolution": "node"
+    "target": "es2020",
+    "module": "es2020", // Set this to es2020, es2022, esnext, etc.
+    "moduleResolution": "node",
+    "outDir": "./dist/server",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*.ts"]
 }
