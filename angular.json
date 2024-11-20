@@ -84,7 +84,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "port": "process.env.PORT || 4200"
+            "port": "process.env.PORT || 3999"
           },
           "configurations": {
             "production": {
