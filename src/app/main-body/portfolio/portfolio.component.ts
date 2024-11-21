@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './portfolio.component.css',
 })
 export class PortfolioComponent implements AfterViewInit {
+  constructor(private cdRef: ChangeDetectorRef) {}
+
   @ViewChild('projectSection') projectSection!: ElementRef<HTMLElement>;
   @ViewChild('projectImage') projectImage!: ElementRef<HTMLImageElement>;
   @ViewChild('projectSkills') projectSkills!: ElementRef<HTMLElement>;
@@ -18,7 +21,7 @@ export class PortfolioComponent implements AfterViewInit {
   projects = [
     {
       status: 'active',
-      id: '01',
+      ids: '01',
       section: 'Accountancy',
       description:
         'I handle various financial tasks including preparing invoices for suppliers, reconciling bank and account statements, processing Exchequer requisitions, making supplier payments through the system, and ensuring timely payment of employees statutory deductions. ',
@@ -29,7 +32,7 @@ export class PortfolioComponent implements AfterViewInit {
     },
     {
       status: '',
-      id: '02',
+      ids: '02',
       section: 'Sales Executive',
       description:
         "I am responsible for consulting clients on loan products, credit cards, bancassurance, and other financial services. I assess customers' creditworthiness and manage relationships with existing clients to ensure satisfaction and continued business.",
@@ -40,7 +43,7 @@ export class PortfolioComponent implements AfterViewInit {
     },
     {
       status: '',
-      id: '03',
+      ids: '03',
       section: 'Banking - Operations Support',
       description:
         'I am responsible for marketing payment products, assisting merchants, and coordinating the sales team. Additionally, I support the customer service experience desk and help plan events such as training sessions, team-building activities, and farewells.',
@@ -51,7 +54,7 @@ export class PortfolioComponent implements AfterViewInit {
     },
     {
       status: '',
-      id: '04',
+      ids: '04',
       section: 'Financial assistance',
       description:
         'I am responsible for opening new accounts for the public, serving as a customer service officer to address internal and external queries, and processing payments for elderly clients.',
@@ -61,6 +64,11 @@ export class PortfolioComponent implements AfterViewInit {
       imageLink: 'assets/images/accounts.jpeg',
     },
   ];
+  updateProjects() {
+    this.projects = [...this.projects];
+    this.cdRef.detectChanges();
+    console.log(this.projects);
+  }
 
   index = 0;
 

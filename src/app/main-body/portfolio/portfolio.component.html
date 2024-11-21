@@ -6,7 +6,7 @@
         class="portfolio-detail {{ items.status }}"
         *ngFor="let items of projects"
       >
-        <p class="numb">{{ items.id }}</p>
+        <p class="numb">{{ items.ids }}</p>
         <h4 #projectSection class="project-section">{{ items.section }}</h4>
         <p #projectDescription class="project-description">
           {{ items.description }}
@@ -32,9 +32,9 @@
     <div class="portfolio-box">
       <div class="portfolio-carousel">
         <div class="img-slide">
-          <div class="img-item" *ngFor="let item of projects">
+          <div class="img-item" *ngFor="let items of projects">
             <img
-              src="{{ item.imageLink }}"
+              src="{{ items.imageLink }}"
               alt=""
               #projectImage
               class="project-image"
