@@ -1146,23 +1146,36 @@ h4 {
 
 @media (max-width: 580px) {
   .home .profession-container .profession-box {
-    width: 80vw;
-    height: 80vw;
+    width: 70vw;
+    height: 70vw;
     top: 70%;
-    left: 10%;
+    left: 15%;
   }
+
   .home .profession-box .profession {
-    left: 25%;
-    top: -15%;
+    left: 20%;
+    top: -30%;
     transform-origin: center 55vw;
   }
   .home .profession-container .circle {
-    width: 100vw;
-    height: 100vw;
+    width: 80vw;
+    height: 80vw;
   }
 
   .contact form .input-box input {
     width: 100%;
+  }
+  .home-content h1,
+  .services-box h3 {
+    font-size: 2.2rem;
+  }
+  .home-content p,
+  .services-box p {
+    font-size: 1.2rem;
+  }
+  .services-box .icon i,
+  .services-box .icon a i {
+    font-size: 3rem;
   }
 }
 @media (max-width: 365px) {
