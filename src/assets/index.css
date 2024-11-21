@@ -1053,7 +1053,6 @@ h4 {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
   .home .profession-box .profession {
     width: 50%;
@@ -1061,7 +1060,7 @@ h4 {
     border-radius: 50%;
     display: flex;
     left: 25%;
-    top: -5%;
+    top: -10%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -1091,7 +1090,7 @@ h4 {
   }
   .home .profession-container .overlay {
     position: fixed;
-    top: 80rem;
+    top: 65rem;
     left: 50%;
     right: 0;
     transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
