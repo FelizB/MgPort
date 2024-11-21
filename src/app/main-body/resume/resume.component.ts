@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ViewChildren,
+  QueryList,
+  ElementRef,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,7 +13,48 @@ import { CommonModule } from '@angular/common';
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.css',
 })
-export class ResumeComponent {
+export class ResumeComponent implements AfterViewInit {
+  @ViewChildren('resumeBtn') resumeBtns!: QueryList<ElementRef> | undefined;
+  activeSection: string = 'experience';
+
+  ngAfterViewInit() {
+    // Ensure all resume buttons are available after view initialization
+    setTimeout(() => {
+      if (this.resumeBtns) {
+        this.resumeBtns.toArray().forEach((btn, idx) => {
+          btn.nativeElement.addEventListener('click', () => {
+            // Deactivate all buttons
+            this.resumeBtns?.toArray().forEach((button) => {
+              button.nativeElement.classList.remove('active');
+            });
+
+            // Activate the clicked button
+            btn.nativeElement.classList.add('active');
+
+            // Set active section based on the clicked button index
+            switch (idx) {
+              case 0:
+                this.activeSection = 'certification';
+                break;
+              case 1:
+                this.activeSection = 'education';
+                break;
+              case 2:
+                this.activeSection = 'certification';
+                break;
+              case 3:
+                this.activeSection = 'skills';
+                break;
+              case 4:
+                this.activeSection = 'personal';
+                break;
+            }
+          });
+        });
+      }
+    }, 0);
+  }
+
   experience = [
     {
       year: 'Jan 2023 - Current',

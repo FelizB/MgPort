@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   menuItems = [
-    { id: '#home', status: 'active', title: 'Home' },
+    { id: '#home', status: '', title: 'Home' },
     { id: '#about', status: '', title: 'About' },
     { id: '#services', status: '', title: 'Services' },
     { id: '#resume', status: '', title: 'Resume' },

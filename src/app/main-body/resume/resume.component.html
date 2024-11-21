@@ -9,16 +9,20 @@
         deliver value in dynamic work environments.
       </p>
 
-      <button class="resume-btn active">Experience</button>
-      <button class="resume-btn">Education</button>
-      <button class="resume-btn">Certifications</button>
-      <button class="resume-btn">Skills</button>
-      <button class="resume-btn">Personal Details</button>
+      <!-- HTML Template (app.component.html) -->
+      <button class="resume-btn active" #resumeBtn>Experience</button>
+      <button class="resume-btn" #resumeBtn>Education</button>
+      <button class="resume-btn" #resumeBtn>Certifications</button>
+      <button class="resume-btn" #resumeBtn>Skills</button>
+      <button class="resume-btn" #resumeBtn>Personal Details</button>
     </div>
 
     <!------------ Experience --------------->
     <div class="resume-box">
-      <div class="resume-detail experience active">
+      <div
+        class="resume-detail experience"
+        [ngClass]="{ active: activeSection === 'experience' }"
+      >
         <h2 class="resume-heading">My <span>Experience</span></h2>
         <p class="desc">
           This section presents a detailed overview of my professional journey,
@@ -39,7 +43,10 @@
       </div>
 
       <!------------ Education --------------->
-      <div class="resume-detail education">
+      <div
+        class="resume-detail education"
+        [ngClass]="{ active: activeSection === 'education' }"
+      >
         <h2 class="resume-heading">My <span>Education</span></h2>
         <p class="desc">
           This section highlights my academic achievements and the foundation of
@@ -61,7 +68,10 @@
       </div>
 
       <!------------ Certifications --------------->
-      <div class="resume-detail certification">
+      <div
+        class="resume-detail certification"
+        [ngClass]="{ active: activeSection === 'certification' }"
+      >
         <h2 class="resume-heading">
           My <span>Licenses and Certifications</span>
         </h2>
@@ -89,7 +99,10 @@
       </div>
 
       <!------------ Skills --------------->
-      <div class="resume-detail skills">
+      <div
+        class="resume-detail skills"
+        [ngClass]="{ active: activeSection === 'skills' }"
+      >
         <h2 class="resume-heading">My <span>Skills and attributes</span></h2>
         <p class="desc">
           This section highlights my core professional competencies and
@@ -108,7 +121,11 @@
       </div>
 
       <!------------personal information--------------->
-      <div class="resume-detail more" id="more-detail">
+      <div
+        class="resume-detail more"
+        id="more-detail"
+        [ngClass]="{ active: activeSection === 'personal' }"
+      >
         <h2 class="resume-heading">Personal <span>Details</span></h2>
         <p class="desc">
           In the personal information section of my CV, I provide a brief

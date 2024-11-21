@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
+Swiper.use([Navigation, Pagination]);
 
 @Component({
   selector: 'app-endorsements',
@@ -7,7 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './endorsements.component.html',
   styleUrl: './endorsements.component.css',
 })
-export class EndorsementsComponent {
+export class EndorsementsComponent implements AfterViewInit {
   endorsers = [
     {
       imageLink: 'assets/images/passport.png',
@@ -38,4 +42,21 @@ export class EndorsementsComponent {
       comment: '',
     },
   ];
+
+  ngAfterViewInit(): void {
+    new Swiper('.mySwiper', {
+      slidesPerView: 1,
+      spaceBetween: 50,
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
 }
