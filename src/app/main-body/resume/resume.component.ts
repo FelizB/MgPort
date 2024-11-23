@@ -58,7 +58,7 @@ export class ResumeComponent implements AfterViewInit {
   experience = [
     {
       year: 'Jan 2023 - Current',
-      title: 'Intern- Finance and Accounts ',
+      title: 'Finance and Accounts ',
       company: 'Office of the controller of budget',
       information: [
         'Preparing invoices for suppliers',
