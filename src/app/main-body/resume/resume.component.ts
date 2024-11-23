@@ -34,7 +34,7 @@ export class ResumeComponent implements AfterViewInit {
             // Set active section based on the clicked button index
             switch (idx) {
               case 0:
-                this.activeSection = 'certification';
+                this.activeSection = 'experience';
                 break;
               case 1:
                 this.activeSection = 'education';
@@ -68,7 +68,6 @@ export class ResumeComponent implements AfterViewInit {
         'Payment of employees’ statutory deductions on time.',
       ],
     },
-
     {
       year: 'Nov 2022 - Nov 2023',
       title: 'Direct sales executive ',
