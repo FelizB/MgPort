@@ -163,7 +163,8 @@ export class ResumeComponent implements AfterViewInit {
     {
       icon: '',
       skillName: 'Sales and Marketing skills',
-      information: 'Agile, DevOps, CI/CD, Robot Framework',
+      information:
+        'Excellent verbal and written communication skills, with a strong foundation and intermediate proficiency in sales and marketing principles and practices',
     },
     {
       icon: '',
